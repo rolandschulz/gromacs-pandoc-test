@@ -1,0 +1,2 @@
+Sample pandoc markdown input and html, man, and latex format to test pandoc for Gromacs documentation.
+To generate output the default template for each output format was used. For html and latex the links*.md files were used as 2nd input format.

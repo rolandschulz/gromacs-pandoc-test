@@ -1,0 +1,13 @@
+[top]: top.html
+[tpr]: tpr.html
+[tpb]: tpb.html
+[tpa]: tpa.html
+[gro]: gro.html
+[g96]: g96.html
+[pdb]: pdb.html
+[xtc]: xtc.html
+[trr]: trr.html
+[trj]: trj.html
+[log]: log.html
+[xpm]: xpm.html
+[xpm2ps]: xpm2ps.html

@@ -1,0 +1,176 @@
+.\"t
+.TH  "" "" 
+.SS g_rms
+.PP
+\f[B]VERSION 4.5.5-dev-20110920-5282f-unknown
+.PD 0
+.P
+.PD
+ Sun 12 Aug 2012\f[]
+.PP
+   *   *   *   *   *
+.SS Description
+.PP
+\f[B]g_rms\f[] compares two structures by computing the root mean square
+deviation (RMSD), the size-independent \f[I]ρ\f[] similarity parameter
+(\f[B]rho\f[]) or the scaled \f[I]ρ\f[] (\f[B]rhosc\f[]), see Maiorov &
+Crippen, Proteins \f[B]22\f[], 273 (1995).
+This is selected by \f[B]-what\f[].
+.PP
+Each structure from a trajectory (\f[B]-f\f[]) is compared to a
+reference structure.
+The reference structure is taken from the structure file (\f[B]-s\f[]).
+.PP
+With option \f[B]-mir\f[] also a comparison with the mirror image of the
+reference structure is calculated.
+This is useful as a reference for \[aq]significant\[aq] values, see
+Maiorov & Crippen, Proteins \f[B]22\f[], 273 (1995).
+.PP
+Option \f[B]-prev\f[] produces the comparison with a previous frame the
+specified number of frames ago.
+.PP
+Option \f[B]-m\f[] produces a matrix in [xpm] format of comparison
+values of each structure in the trajectory with respect to each other
+structure.
+This file can be visualized with for instance \f[B]xv\f[] and can be
+converted to postscript with [xpm2ps].
+.PP
+Option \f[B]-fit\f[] controls the least-squares fitting of the
+structures on [top] of each other: complete fit (rotation and
+translation), translation only, or no fitting at all.
+.PP
+Option \f[B]-mw\f[] controls whether mass weighting is done or not.
+If you select the option (default) and supply a valid [tpr] file masses
+will be taken from there, otherwise the masses will be deduced from the
+\f[B]atommass.dat\f[] file in \f[B]GMXLIB\f[].
+This is fine for proteins, but not necessarily for other molecules.
+A default mass of 12.011 amu (carbon) is assigned to unknown atoms.
+You can check whether this happend by turning on the \f[B]-debug\f[]
+flag and inspecting the [log] file.
+.PP
+With \f[B]-f2\f[], the \[aq]other structures\[aq] are taken from a
+second trajectory, this generates a comparison matrix of one trajectory
+versus the other.
+.PP
+Option \f[B]-bin\f[] does a binary dump of the comparison matrix.
+.PP
+Option \f[B]-bm\f[] produces a matrix of average bond angle deviations
+analogously to the \f[B]-m\f[] option.
+Only bonds between atoms in the comparison group are considered.
+.SS Files
+.PP
+.TS
+tab(@);
+l l l l.
+T{
+option
+T}@T{
+filename
+T}@T{
+type
+T}@T{
+description
+T}
+_
+T{
+\f[B]-s\f[]
+T}@T{
+topol.tpr
+T}@T{
+Input
+T}@T{
+Structure+mass(db): [tpr] [tpb] [tpa] [gro] [g96] [pdb]
+T}
+T{
+\f[B]-f\f[]
+T}@T{
+traj.xtc
+T}@T{
+Input
+T}@T{
+Trajectory: [xtc] [trr] [trj] [gro] [g96] [pdb] cpt
+T}
+T{
+\f[B]-f2\f[]
+T}@T{
+traj.xtc
+T}@T{
+Input, Opt.
+T}@T{
+Trajectory: [xtc] [trr] [trj] [gro] [g96] [pdb] cpt
+T}
+T{
+\f[B]-n\f[]
+T}@T{
+index.ndx
+T}@T{
+Input, Opt.
+T}@T{
+Index file
+T}
+T{
+\f[B]-o\f[]
+T}@T{
+rmsd.xvg
+T}@T{
+Output
+T}@T{
+xvgr/xmgr file
+T}
+T{
+\f[B]-mir\f[]
+T}@T{
+rmsdmir.xvg
+T}@T{
+Output, Opt.
+T}@T{
+xvgr/xmgr file
+T}
+T{
+\f[B]-a\f[]
+T}@T{
+avgrp.xvg
+T}@T{
+Output, Opt.
+T}@T{
+xvgr/xmgr file
+T}
+T{
+\f[B]-dist\f[]
+T}@T{
+rmsd-dist.xvg
+T}@T{
+Output, Opt.
+T}@T{
+xvgr/xmgr file
+T}
+T{
+\f[B]-m\f[]
+T}@T{
+rmsd.xpm
+T}@T{
+Output, Opt.
+T}@T{
+X PixMap compatible matrix file
+T}
+T{
+\f[B]-bin\f[]
+T}@T{
+rmsd.dat
+T}@T{
+Output, Opt.
+T}@T{
+Generic data file
+T}
+T{
+\f[B]-bm\f[]
+T}@T{
+bond.xpm
+T}@T{
+Output, Opt.
+T}@T{
+X PixMap compatible matrix file
+T}
+.TE
+.PP
+<http://www.gromacs.org> <gromacs@gromacs.org>
