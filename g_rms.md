@@ -67,5 +67,33 @@ comparison group are considered.
   **-bin**           rmsd.dat     Output, Opt.   Generic data file
   **-bm**            bond.xpm     Output, Opt.   X PixMap compatible matrix file
 
+### Other options
+
+  option               type   default       description
+  -------------------- ------ ------------- ------------------------------------------------------------------
+  **-[no]h**           bool   no            Print help info and quit
+  **-[no]version**     bool   no            Print version info and quit
+  **-nice**            int    19            Set the nicelevel
+  **-b**               time   0             First frame (ps) to read from trajectory
+  **-e**               time   0             Last frame (ps) to read from trajectory
+  **-dt**              time   0             Only use frame when t MOD dt = first time (ps)
+  **-tu**              enum   ps            Time unit: **fs**, **ps**, **ns**, **us**, **ms** or **s**
+  **-[no]w**           bool   no            View output **.xvg**, **.xpm**, **.eps** and **.pdb** files
+  **-xvg**             enum   xmgrace       [xvg] plot formatting: **xmgrace**, **xmgr** or **none**
+  **-what**            enum   rmsd          Structural difference measure: **rmsd**, **rho** or **rhosc**
+  **-[no]pbc**         bool   yes           PBC check
+  **-fit**             enum   rot+trans     Fit to reference structure: **rot+trans**, **translation** or **none**
+  **-prev**            int    0             Compare with previous frame
+  **-[no]split**       bool   no            Split graph where time is zero
+  **-skip**            int    1             Only write every nr-th frame to matrix
+  **-skip2**           int    1             Only write every nr-th frame to matrix
+  **-max**             real   -1            Maximum level in comparison matrix
+  **-min**             real   -1            Minimum level in comparison matrix
+  **-bmax**            real   -1            Maximum level in bond angle matrix
+  **-bmin**            real   -1            Minimum level in bond angle matrix
+  **-[no]mw**          bool   yes           Use mass weighting for superposition
+  **-nlevels**         int    80            Number of levels in the matrices
+  **-ng**              int    1             Number of groups to compute RMS between
+
 <http://www.gromacs.org> <gromacs@gromacs.org>
 
